@@ -1,0 +1,27 @@
+
+<div>
+  <form name='define' ng-submit='getWord(wordDef)'>
+    <input name='word' type='text' ng-model='wordDef'>
+    <button type='submit'>Get Definition</button>
+  </form>
+  <div>
+    <ul>
+      <li ng-repeat='word in definition.words'>
+        <h2>{{ word.data.entry_list.entry[0].ew[0]}}</h2>
+        <!-- <p>{{ word.data.entry_list.entry[0].hw[0]}}</p> -->
+        <p>/{{ word.data.entry_list.entry[0].pr[0]}}/</p>
+        <p>{{ word.data.entry_list.entry[0].fl[0]}}</p>
+        <p>{{ word.data.entry_list.entry[0].et[0]['_']}}</p>
+        <p ng-repeat="version in word.data.entry_list.entry[0].et[0].it">{{version}}</p>
+        <p>{{ word.data.entry_list.entry[0].def[0].date[0]}}</p>
+        <ol>
+          <li ng-repeat="def in word.data.entry_list.entry[0].def[0].dt">{{def}}
+            def
+          </li>
+        </ol>
+        <!-- <span>{{ word.data.entry_list.entry[0].def[0].dt[0].d_link}}</span> -->
+        <!-- <p>2. {{ word.data.entry_list.entry[0].def[0].dt[1]}}</p> -->
+        <p>{{ word.data.entry_list.entry[0].uro.fl[0]}}</p>
+      </li>
+    </ul>
+  </div>

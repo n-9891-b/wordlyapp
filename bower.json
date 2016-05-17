@@ -1,0 +1,20 @@
+{
+  "name": "wordlyapp",
+  "description": "The Wordly App",
+  "main": "index.js",
+  "authors": [
+    "Nate Blain"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/n-9891-b/wordlyapp",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5"
+  }
+}
