@@ -8,6 +8,14 @@ angular.module('wordly', [
     .when('/', {
       templateUrl: './app/wordsearch/word.html',
       controller: 'WordController'
+    })    
+    .when('/signin', {
+      templateUrl: 'app/auth/signin.html',
+      controller: 'AuthController'
+    })
+    .when('/signup', {
+      templateUrl: 'app/auth/signup.html',
+      controller: 'AuthController'
     })
     .otherwise({redirectTo: '/'});
 

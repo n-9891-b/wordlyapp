@@ -1,24 +1,25 @@
 
 <div>
   <form name='define' ng-submit='getWord(wordDef)'>
-    <input name='word' type='text' ng-model='wordDef'>
+    <input name='lookup' type='text' ng-model='wordDef'>
     <button type='submit'>Get Definition</button>
   </form>
   <div>
+    <!-- <h3 ng-show='flag'>Please enter a word</h3> -->
+    <h3 ng-show='error && flag'>Don't be an idiot. Enter a real word.</h3>
     <ul>
-      <li ng-repeat='word in definition.words'>
+      <li ng-hide='flag && !word' class="fx-fade-normal">
         <h2>{{ word.data.results[0].headword}}</h2>
         <p>{{ word.data.results[0].pronunciations[0].ipa }}</p>
         <p>{{ word.data.results[0].part_of_speech}}</p>
         <p ng-repeat="def in word.data.results[0].senses[0].definition">Definition: {{def}}</p>
-        
         <p ng-show='word.data.results[0].senses[0].examples[0].text'>Example: {{ word.data.results[0].senses[0].examples[0].text }}</p>
       </li>
     </ul>
   </div>
   <div>
     <ul>
-      <li ng-repeat='word in definition.words'><a ng-click='showCurrent(current)' ng-model='current'>{{ word.data.results[0].headword }} </a></li>
+      <li ng-repeat='word in definition'><a class='clickable' ng-click='showCurrent(word.data.results[0].headword)' ng-model='current'>{{ word.data.results[0].headword }}</a></li>
     </ul>
   </div>
 </div>

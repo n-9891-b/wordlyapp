@@ -11,7 +11,7 @@ angular.module('wordly.requests', [])
         word: word
       }
     }).then(function(resp) {
-      console.log(resp);
+      // console.log(resp);
       return resp;
     });
   }
