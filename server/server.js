@@ -12,13 +12,12 @@ app.use(express.static(__dirname + '/../client'));
 app.use(bodyParser.json());
 
 app.post('/api/definition', function(req, res){
-  console.log(req.body.word);
   request('http://api.pearson.com/v2/dictionaries/ldoce5/entries?headword=' + req.body.word + '&apikey=uUZqExZoy3iTG07o765d6GUAARhKpWqU', function(err, response, body){
       console.log(body);
-      if (err) 
+      if (err)
         res.send(err);
       else
-        res.send(body);      
+        res.send(body);
   });
 });
 
